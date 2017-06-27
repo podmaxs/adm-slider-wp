@@ -1,13 +1,13 @@
 <?php
 	header('Content-Type: application/json');
 	
-	include_once "../../../wp-blog-header.php";
+	// /include_once __DIR__."/../../../wp-blog-header.php";
  	include_once "functions.php";
 
 	class request{
 		private $ret=array("data"=>array(),"log"=>"","status"=>"no run");	
 		public function __construct(){
-			create_cpts_and_taxonomies("bannerImage"); 
+			// create_cpts_and_taxonomies("bannerImage"); 
 			if(isset($_REQUEST["ACTION"])){
 				$action=$_REQUEST["ACTION"]."_void";
 				if(method_exists($this, $action))
@@ -214,5 +214,5 @@
 	}
 
 
-	new request();
+	$exe = new request();
  ?>
